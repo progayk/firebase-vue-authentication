@@ -31,7 +31,7 @@
 
           <div class="field">
             <div class="control has-icons-left has-icons-right">
-              <input class="input is-info is-rounded" type="password" placeholder="password" autofocus>
+              <input class="input is-info is-rounded" v-model="password" type="password" placeholder="password" autofocus>
               <span class="icon is-small is-left">
       <i class="fas fa-lock"></i>
     </span>
@@ -41,7 +41,7 @@
             </div>
           </div>
           <div class="buttons is-left">
-            <a class="button is-primary is-rounded" v-on:click="login">Login</a>
+            <a class="button is-primary is-rounded" v-on:click="signIn">Login</a>
             <router-link to="/signup"><a class="button is-outlined is-info is-rounded">Sign up</a></router-link>
           </div>
         </div>
@@ -51,19 +51,29 @@
 </template>
 
 <script>
+import firebase from 'firebase'
 export default {
   name: 'AppLogin',
   data () {
-    return {}
+    return {
+      email: '',
+      password: ''
+    }
   },
   methods: {
-    login: function () {
-      this.$router.replace('hello')
+    signIn () {
+      firebase.auth().signInWithEmailAndPassword(this.email, this.password)
+        .then((user) => {
+          alert('Well done! You are now connected.')
+        })
+        .catch((err) => {
+          alert('Oops, ' + err.message)
+        })
     }
   }
 }
 </script>
 
 <style lang="scss">
-  @import '~bulma/bulma'
+  @import '~bulma/bulma';
 </style>
