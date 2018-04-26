@@ -3,11 +3,12 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import SuiVue from 'semantic-ui-vue'
-
-Vue.use(SuiVue)
+import * as firebase from 'firebase'
+import * as firebaseConfig from '../config/firebase-config'
 
 Vue.config.productionTip = false
+
+firebase.initializeApp(firebaseConfig.FIREBASE_CONFIG)
 
 /* eslint-disable no-new */
 new Vue({

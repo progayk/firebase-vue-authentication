@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "bulma": "^0.7.1",
+    "firebase": "^4.13.1",
     "semantic-ui-css": "^2.3.1",
     "semantic-ui-vue": "^0.2.8",
     "vue": "^2.5.2",
