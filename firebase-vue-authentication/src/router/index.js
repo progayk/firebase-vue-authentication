@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import 'semantic-ui-css/semantic.min.css'
 import HelloWorld from '@/components/HelloWorld'
 import AppLogin from '@/components/AppLogin'
 
