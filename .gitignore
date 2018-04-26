@@ -1,2 +1,3 @@
 node_modules/
 firebase-vue-authentication/config/firebase-config.js
+firebase-vue-authentication/package-lock.json
